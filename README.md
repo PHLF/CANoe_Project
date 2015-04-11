@@ -4,10 +4,12 @@ ECE student CAN project made using Vector's CANoe software.
 Personal indications:
 
 This project was built using four components:
+'''
 	- CANoe
 	- CANdb
 	- CAN Panel Editor
 	- CAPL Browser (the most useful part)
+'''
   
 The CAPL Editor allows us to define the behaviour of each CAN network node
 	=> A CAPL file per node.
