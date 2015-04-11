@@ -19,7 +19,8 @@ The CAPL Editor allows us to define the behaviour of each CAN network node
 [CAPL programming with CANoe](https://www.vector.com/portal/medien/vector_cantech/faq/ProgrammingWithCAPL.pdf)
 	
   **Important pages** (relative page number of the document)
-  	- Page 3 to 4
-  	- From 29
+  
+  	* Page 3 to 4
+  	* From 29
 
 [CAPL functions reference manual](http://vector.com/portal/medien/vector_cantech/faq/CAPLFunctionReferenceManual.pdf)
