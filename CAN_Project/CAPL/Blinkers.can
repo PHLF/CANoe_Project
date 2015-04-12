@@ -1,0 +1,22 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on envVar BlinkerL_pushbutton
+{
+ BlinkerL_value
+  
+}
+
+void Blink_timer()
+{
+  
+}
+

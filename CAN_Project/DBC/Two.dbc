@@ -59,15 +59,19 @@ BO_ 1008 FrmBlinkers: 1 DashBoard
 
 
 
-EV_ Gear_value: 0 [0|6] "gear" 0 1 DUMMY_NODE_VECTOR2  Engine;
+EV_ BlinkerR_pushbutton: 0 [0|1] "" 0 1 DUMMY_NODE_VECTOR1  Blinkers;
 
-EV_ Engine_RPM_value: 0 [0|28672] "rpm" 0 2 DUMMY_NODE_VECTOR2  Engine;
+EV_ BlinkerL_pushbutton: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR1  Blinkers;
 
-EV_ Speed_Indicator_value: 0 [0|768] "km/h" 0 3 DUMMY_NODE_VECTOR2  Engine;
+EV_ Gear_value: 0 [0|6] "gear" 0 3 DUMMY_NODE_VECTOR2  Engine;
 
-EV_ BlinkerR_value: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR2  Blinkers;
+EV_ Engine_RPM_value: 0 [0|28672] "rpm" 0 4 DUMMY_NODE_VECTOR2  Engine;
 
-EV_ BlinkerL_value: 0 [0|1] "" 0 5 DUMMY_NODE_VECTOR2  Blinkers;
+EV_ Speed_Indicator_value: 0 [0|768] "km/h" 0 5 DUMMY_NODE_VECTOR2  Engine;
+
+EV_ BlinkerR_value: 0 [0|1] "" 0 6 DUMMY_NODE_VECTOR2  Blinkers;
+
+EV_ BlinkerL_value: 0 [0|1] "" 0 7 DUMMY_NODE_VECTOR2  Blinkers;
 
 BA_DEF_ BU_  "NodeLayerModule" STRING ;
 BA_DEF_ BU_  "NodeLayerModules" STRING ;
@@ -106,10 +110,10 @@ BA_DEF_DEF_  "GenSigInactiveValue" 0;
 BA_DEF_DEF_  "GenSigSendType" "Cyclic";
 BA_DEF_DEF_  "GenSigStartValue" 0;
 BA_ "GenMsgSendType" BO_ 1023 7;
-BA_ "GenMsgCycleTime" BO_ 768 100;
 BA_ "GenMsgSendType" BO_ 768 0;
-BA_ "GenMsgCycleTime" BO_ 0 50;
+BA_ "GenMsgCycleTime" BO_ 768 100;
 BA_ "GenMsgSendType" BO_ 0 0;
+BA_ "GenMsgCycleTime" BO_ 0 50;
 BA_ "GenSigSendType" SG_ 1023 sigStart 3;
 VAL_ 1023 sigStart 1 "On" 0 "Off" ;
 VAL_ 768 gear 6 "Reverse Gear" 5 "Gear 5" 4 "Gear 4" 3 "Gear 3" 2 "Gear 2" 1 "Gear 1" 0 "Neutral" ;

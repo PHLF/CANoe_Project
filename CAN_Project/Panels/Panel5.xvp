@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=8.1.91.0, Culture=neutral, PublicKeyToken=null">
-  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=8.1.91.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Panel5">
-    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=8.1.91.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator">
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Panel5">
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator">
       <Property Name="Name">SwitchControl1</Property>
       <Property Name="Size">23, 30</Property>
       <Property Name="Location">132, 129</Property>
@@ -11,7 +11,7 @@
       <Property Name="SymbolConfiguration">4;2;Two;DashBoard;FrmStart;sigStart;1;CAN;;-1</Property>
       <Property Name="TabIndex">2</Property>
     </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.ClockControl, Vector.CANalyzer.Panels.CommonControls, Version=8.1.91.0, Culture=neutral, PublicKeyToken=null" Name="ClockControl1" ControlName="Clock Control">
+    <Object Type="Vector.CANalyzer.Panels.Design.ClockControl, Vector.CANalyzer.Panels.CommonControls, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="ClockControl1" ControlName="Clock Control">
       <Property Name="Name">ClockControl1</Property>
       <Property Name="Size">164, 50</Property>
       <Property Name="Location">61, 73</Property>
