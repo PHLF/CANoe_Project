@@ -1,0 +1,123 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: DashBoard Engine Control Blinkers
+VAL_TABLE_ Start 1 "On" 0 "Off" ;
+VAL_TABLE_ ParkingBreak 1 "Parking Break Set" 0 "Parking Break Not Set" ;
+VAL_TABLE_ Gear 6 "Reverse Gear" 5 "Gear 5" 4 "Gear 4" 3 "Gear 3" 2 "Gear 2" 1 "Gear 1" 0 "Neutral" ;
+VAL_TABLE_ BrakePedal 1 "Brake Pedal Pressed" 0 "Brake Pedal Released" ;
+VAL_TABLE_ blinkers 1 "Active" 0 "Inactive" ;
+
+
+BO_ 1023 FrmStart: 1 DashBoard
+ SG_ sigStart : 0|1@1+ (1,0) [0|1] ""  DashBoard,Engine,Control,Blinkers
+
+BO_ 768 FrmEngine: 2 Engine
+ SG_ speedEngine : 8|8@1+ (27.4509803921569,0) [0|7000] "RPM"  DashBoard
+ SG_ gear : 0|3@1+ (1,0) [0|7] ""  DashBoard
+
+BO_ 0 FrmControl: 2 Control
+ SG_ parkingBrake : 14|2@1+ (1,0) [0|3] ""  DashBoard,Engine
+ SG_ brakePedal : 8|2@1+ (1,0) [0|3] ""  Engine
+ SG_ acceleratorPedalPosition : 0|8@1+ (0.392156862745098,0) [0|100] "%"  Engine
+
+BO_ 1008 FrmBlinkers: 1 DashBoard
+ SG_ blinkerR : 1|1@1+ (1,0) [0|1] ""  Blinkers
+ SG_ blinkerL : 0|1@1+ (1,0) [0|1] ""  Blinkers
+
+
+
+EV_ Gear_value: 0 [0|6] "gear" 0 1 DUMMY_NODE_VECTOR2  Engine;
+
+EV_ Engine_RPM_value: 0 [0|28672] "rpm" 0 2 DUMMY_NODE_VECTOR2  Engine;
+
+EV_ Speed_Indicator_value: 0 [0|768] "km/h" 0 3 DUMMY_NODE_VECTOR2  Engine;
+
+EV_ BlinkerR_value: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR2  Blinkers;
+
+EV_ BlinkerL_value: 0 [0|1] "" 0 5 DUMMY_NODE_VECTOR2  Blinkers;
+
+BA_DEF_ BU_  "NodeLayerModule" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ SG_  "NWM-WakeupAllowed" ENUM  "No","Yes";
+BA_DEF_ BO_  "NmMessage" ENUM  "no","yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmStationAddress" INT 0 63;
+BA_DEF_  "NmBaseAddress" HEX 1024 1087;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 50000;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 999999;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","Cyclic","NotUsed","IfActive","NoMsgSendType","NotUsed","vector_leerstring";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed";
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 100000000000;
+BA_DEF_DEF_  "NodeLayerModule" "CANoeILNLVector.dll";
+BA_DEF_DEF_  "NodeLayerModules" "CANoeILNLVector.dll";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NWM-WakeupAllowed" "";
+BA_DEF_DEF_  "NmMessage" "no";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "NmNode" "no";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "NmBaseAddress" 1024;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_ "GenMsgSendType" BO_ 1023 7;
+BA_ "GenMsgCycleTime" BO_ 768 100;
+BA_ "GenMsgSendType" BO_ 768 0;
+BA_ "GenMsgCycleTime" BO_ 0 50;
+BA_ "GenMsgSendType" BO_ 0 0;
+BA_ "GenSigSendType" SG_ 1023 sigStart 3;
+VAL_ 1023 sigStart 1 "On" 0 "Off" ;
+VAL_ 768 gear 6 "Reverse Gear" 5 "Gear 5" 4 "Gear 4" 3 "Gear 3" 2 "Gear 2" 1 "Gear 1" 0 "Neutral" ;
+VAL_ 0 parkingBrake 1 "Parking Break Set" 0 "Parking Break Not Set" ;
+VAL_ 0 brakePedal 1 "Brake Pedal Pressed" 0 "Brake Pedal Released" ;
+VAL_ 1008 blinkerR 1 "Active" 0 "Inactive" ;
+VAL_ 1008 blinkerL 1 "Active" 0 "Inactive" ;
+VAL_ Gear_value 6 "Reverse Gear" 5 "Gear 5" 4 "Gear 4" 3 "Gear 3" 2 "Gear 2" 1 "Gear 1" 0 "Neutral" ;
+VAL_ BlinkerR_value 1 "Active" 0 "Inactive" ;
+VAL_ BlinkerL_value 1 "Active" 0 "Inactive" ;
+
