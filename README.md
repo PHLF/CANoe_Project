@@ -7,8 +7,8 @@ ECE student CAN project made using Vector's CANoe software.
 
 	* CANoe
 	* CANdb
-	* **CAN Panel Editor**
-	* **CAPL Browser**
+	* CAN Panel Editor
+	* CAPL Browser
 
   
 The CAPL Editor allows us to define the behaviour of each CAN network node
