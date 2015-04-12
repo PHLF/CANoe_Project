@@ -1,22 +1,14 @@
 /*@!Encoding:1252*/
-includes
-{
-  
-}
-
 variables
 {
-  
+  Timer blinkTimer;
 }
 
-on envVar BlinkerL_pushbutton
+on timer blinkTimer
 {
- BlinkerL_value
-  
-}
-
-void Blink_timer()
-{
-  
+  if(getValue(BlinkerL_pushbutton)==1)
+  {
+    putValue(BlinkerL_value,getValue(BlinkerL_value)+1);
+  }
 }
 
