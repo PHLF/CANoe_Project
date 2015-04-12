@@ -20,9 +20,10 @@ The CAPL Editor allows us to define the behaviour of each CAN network node
 	
   **Important pages** (relative page number of the document)
   
-  	* Page 3 to 4
+  	* Pages 3 to 4
   	* From page 29
   	* From page 81
   	* From page 96
+  	* From page 132
 
 [CAPL functions reference manual](http://vector.com/portal/medien/vector_cantech/faq/CAPLFunctionReferenceManual.pdf)
