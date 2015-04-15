@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Dashboard">
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls" ControlName="Button 2">
+        <Property Name="Name">ButtonControl2</Property>
+        <Property Name="Size">75, 23</Property>
+        <Property Name="Location">87, 19</Property>
+        <Property Name="Text">Right Blinker</Property>
+        <Property Name="SymbolConfiguration">4;2;Two;DashBoard;FrmBlinkers;blinkerR;1;CAN;;-1</Property>
+        <Property Name="TabIndex">1</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=8.5.38.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls" ControlName="Button">
+        <Property Name="Name">ButtonControl1</Property>
+        <Property Name="Size">75, 23</Property>
+        <Property Name="Location">6, 19</Property>
+        <Property Name="Text">Left Blinker</Property>
+        <Property Name="SymbolConfiguration">4;2;Two;DashBoard;FrmBlinkers;blinkerL;1;CAN;;-1</Property>
+        <Property Name="TabIndex">0</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">169, 51</Property>
+      <Property Name="Location">3, 159</Property>
+      <Property Name="Text">Blinkers</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">480, 270</Property>
+  </Object>
+</Panel>

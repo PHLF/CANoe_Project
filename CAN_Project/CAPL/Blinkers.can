@@ -1,14 +1,77 @@
 /*@!Encoding:1252*/
 variables
 {
-  Timer blinkTimer;
+  msTimer blinkTimer;
+  int tempBlinkLValue;
+  int tempBlinkRValue;
+  message FrmBlinkers blinkerCmd;
+}
+
+on start
+{
+  setTimer(blinkTimer,500);
+  tempBlinkLValue=0;
+  tempBlinkRValue=0;
+}
+
+on message FrmBlinkers
+{
+  write("test");
+  if(this.blinkerL>0&&this.blinkerR<=0)
+  {
+    write("test1");
+  tempBlinkLValue=1;
+  tempBlinkRValue=0;
+  }
+  else if(this.blinkerL<=0&&this.blinkerR>0)
+  {
+    write("test2");
+  tempBlinkLValue=0;
+  tempBlinkRValue=1;
+  }
+  else if(this.blinkerL<=0&&this.blinkerR<=0)
+  {
+    write("test3");
+  tempBlinkLValue=0;
+  tempBlinkRValue=0;
+  }
+  
+}
+
+on envVar BlinkerL_pushbutton
+{
+  blinkerCmd.blinkerL=getValue(BlinkerL_pushbutton);
+  
+  blinkerCmd.blinkerR=0;
+  putValue(BlinkerR_pushbutton,0);
+ 
+  output(blinkerCmd);
+}
+
+on envVar BlinkerR_pushbutton
+{
+  blinkerCmd.blinkerR=getValue(BlinkerR_pushbutton);
+  
+  blinkerCmd.blinkerL=0;
+  putValue(BlinkerL_pushbutton,0);
+
+  output(blinkerCmd);
 }
 
 on timer blinkTimer
 {
-  if(getValue(BlinkerL_pushbutton)==1)
-  {
-    putValue(BlinkerL_value,getValue(BlinkerL_value)+1);
-  }
+  write("timer");
+  setTimer(blinkTimer,500);
+if(tempBlinkRValue==1&&tempBlinkLValue==0)
+{
+  putValue(BlinkerR_value,(getValue(BlinkerR_value)+1)%2);
+  putValue(BlinkerL_value,0);
+}
+if(tempBlinkLValue==1&&tempBlinkRValue==0)
+{
+  putValue(BlinkerL_value,(getValue(BlinkerL_value)+1)%2);
+  putValue(BlinkerR_value,0);
+}
+  
 }
 
